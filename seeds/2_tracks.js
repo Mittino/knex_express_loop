@@ -52,6 +52,9 @@ exports.seed = function(knex) {
         id: 12,
         artist_id: 4,
         title: 'Sin',
-      }]);
+      }])
+      .then(function(){
+        return knex.raw("SELECT setval('tracks_id_seq', (SELECT MAX(id) FROM tracks))");
+      });
     });
 };

@@ -39,7 +39,7 @@ router.post('/artists', (req, res, next) => {
   })
   .catch((err) => {
     next(err);
-  })
-})
+  });
+});
 
 module.exports = router;
